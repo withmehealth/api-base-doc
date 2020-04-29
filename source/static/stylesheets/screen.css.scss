@@ -2,6 +2,7 @@
 @import 'normalize';
 @import 'variables';
 @import 'icon-font';
+@import 'wme-variables';
 // @import 'rtl'; // uncomment to switch to RTL format
 
 /*
@@ -74,8 +75,8 @@ html, body {
   // This is the logo at the top of the ToC
   .logo {
     display: block;
-    max-width: 100%;
-    margin-bottom: $logo-margin;
+    max-width: 70%;
+    margin: 20px auto;
   }
 
   &>.search {
@@ -542,11 +543,40 @@ html, body {
   }
 
   blockquote {
+    overflow: hidden;
+    margin: 0;
+    width: 50%;
+    float: right;
+    clear: right;
+    box-sizing: border-box;
     &>p {
       background-color: $code-annotation-bg;
       padding: $code-annotation-padding 2em;
       color: #eee;
     }
+    &>.box {
+      font-family: Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
+      font-size: 12px;
+      line-height: 1.5;
+      background-color: #000;
+      border-radius: 6px;
+      margin: 1em 15px;
+      font-size: 13px;
+      color: #cccccc;
+      padding: 13px;
+      .method {
+        font-weight: bold;
+        &.post { color: #f39c12; }
+        &.get { color: #2ecc71; }
+        &.put { color: #3498db; }
+        &.delete { color: #e74c3c; }
+        &.patch { color: #9b59b6; }
+      }
+    }
+  }
+
+  pre + blockquote div:first-child {
+    margin-top: 0px
   }
 }
 
